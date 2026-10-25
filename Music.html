@@ -1,6 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quirky Artistic Space</title>
+    <!-- Import a hand-written font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  
+  <style>
+    body {
+            background-color: #fcf9f2; /* Warm paper texture vibe */
+            color: #2c2c2c;
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+    h1 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            transform: rotate(-1deg); /* Slight tilt for a human touch */
+        }
+
+        /* The "hand-drawn" box using complex border-radius */
+        .sketchy-card {
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 85%;
+            text-align: center;
+            box-shadow: 6px 6px 0px #2c2c2c; /* Hard offset shadow looks like comic book ink */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Organic wobbly shape */
+            transform: rotate(1deg);
+            transition: transform 0.2s ease;
+        }
+
+        .sketchy-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+  </style>
+
+  <body>
+    <div class="sketchy-card">
+        <h1>My favourite artist is: Taylor Swift</h1>
+        <div class="doodle-line"></div>
+        <p>Why I like her:</p>
+        <ul>
+          <li>1. Her Music is shmashin!<br></li>
+          <li>2. The text is amazing!<br></li>
+          <li>3. She is a good person!<br></li>
+      </ul>
+    </div>
+  </body>
+
+
   
 </head>
 </html>
