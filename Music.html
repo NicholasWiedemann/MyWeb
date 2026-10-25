@@ -7,6 +7,8 @@
     <!-- Import a hand-written font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap" rel="stylesheet">
 
+</head>
+
   
   <style>
     body {
@@ -45,9 +47,39 @@
             transition: transform 0.2s ease;
         }
 
-        .sketchy-card:hover {
+    .sketchy-card:hover {
             transform: rotate(0deg) scale(1.02);
         }
+    .nav-island {
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            box-shadow: 6px 6px 0px #2c2c2c; /* Hard offset shadow looks like comic book ink */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Organic wobbly shape */
+            max-height: 500px;
+            height: 85%;
+            padding: 2.5rem;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+      .nav-island ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+      .nav-island a {
+            text-decoration: none; /* Removes the default blue underline */
+            color: #2c2c2c;        /* Matches your ink dark charcoal color */
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: block;        /* Makes the whole line clickable, not just the text */
+            padding: 8px 12px;
+        }
+
+    
   </style>
 
   <body>
@@ -61,9 +93,16 @@
           <li>3. She is a good person!<br></li>
       </ul>
     </div>
+
+    <nav class="nav-island">
+    <ul>
+        <li><a href="index.html">🏠Home</a></li>
+        <li><a href="quotes.html">💌Quotes</a></li>
+    </ul>
+    </nav>
   </body>
 
 
   
-</head>
+
 </html>
