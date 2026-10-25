@@ -9,6 +9,31 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
     
     <style>
+        /* Mobile Responsive Styling */
+        @media (max-width: 768px) {
+            .nav-island {
+            top: auto;
+            bottom: 15px;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%); /* Centers the island horizontally at the bottom */
+            padding: 0.8rem 1.5rem;
+            height: auto;
+            max-height: none;
+        }
+
+        .nav-island ul {
+            display: flex; /* Arranges the nav links side by side in a row */
+            gap: 10px;
+        }
+
+        .nav-island a {
+            font-size: 1.1rem;
+            padding: 4px 8px;
+        }
+    }
+
+        
         /* The organic, sketchy look */
         body {
             background-color: #fcf9f2; /* Warm paper texture vibe */
