@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quirky Artistic Space</title>
+    <!-- Import a hand-written font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
+    <style>
+        /* The organic, sketchy look */
+        body {
+            background-color: #fcf9f2; /* Warm paper texture vibe */
+            color: #2c2c2c;
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
+        h1 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            transform: rotate(-1deg); /* Slight tilt for a human touch */
+        }
+
+        /* The "hand-drawn" box using complex border-radius */
+        .sketchy-card {
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 85%;
+            text-align: center;
+            box-shadow: 6px 6px 0px #2c2c2c; /* Hard offset shadow looks like comic book ink */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Organic wobbly shape */
+            transform: rotate(1deg);
+            transition: transform 0.2s ease;
+        }
+
+        .sketchy-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .nav-island {
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            box-shadow: 6px 6px 0px #2c2c2c; /* Hard offset shadow looks like comic book ink */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Organic wobbly shape */
+            max-height: 500px;
+            height: 85%;
+            padding: 2.5rem;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .nav-island ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-island a {
+            text-decoration: none; /* Removes the default blue underline */
+            color: #2c2c2c;        /* Matches your ink dark charcoal color */
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: block;        /* Makes the whole line clickable, not just the text */
+            padding: 8px 12px;
+        }
+
+        /* Doodled line separator */
+        .doodle-line {
+            width: 80%;
+            height: 4px;
+            background: #2c2c2c;
+            margin: 1rem auto;
+            border-radius: 50% / 100%;
+        }
+
+        
+
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="sketchy-card">
+        <h1>Hello, World! ✏️</h1>
+        <div class="doodle-line"></div>
+        <p>Welcome to the place where you can find all the inspo you need. 👮‍♀️🧑‍🌾👩‍🚒👩‍⚖️</p>
+        
+        <p id="secret-text" style="margin-top: 1rem; font-style: italic; color: #555;"></p>
+    </div>
+
+    <nav class="nav-island">
+    <ul>
+        <li><a href="index.html">Go back 🏠Home</a></li>
+    </ul>
+    </nav>
+
+    <script>
+        function onLoadingWebsite() {
+            const secrets = [
+                "A party never hurt nobody. 🎉",
+                "Behind every star is a planet with a person like you looking into the sky. ✨",
+                "You will make it to the moon and back. 🚀",
+                "Stay curious and keep breaking things to see how they work. 💡"
+            ];
+            // Pick a random secret message
+            const randomSecret = secrets[Math.floor(Math.random() * secrets.length)];
+            document.getElementById("secret-text").innerText = randomSecret;
+
+          onLoadingWebsite();
+        }
+    </script>
+
+</body>
+</html>
