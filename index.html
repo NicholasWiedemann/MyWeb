@@ -3,49 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>My Quirky Artistic Space</title>
+    <!-- Import a hand-written font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
     <style>
+        /* The organic, sketchy look */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #fcf9f2; /* Warm paper texture vibe */
+            color: #2c2c2c;
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            font-size: 1.2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+        h1 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            transform: rotate(-1deg); /* Slight tilt for a human touch */
+        }
+
+        /* The "hand-drawn" box using complex border-radius */
+        .sketchy-card {
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 85%;
             text-align: center;
-            max-width: 400px;
+            box-shadow: 6px 6px 0px #2c2c2c; /* Hard offset shadow looks like comic book ink */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Organic wobbly shape */
+            transform: rotate(1deg);
+            transition: transform 0.2s ease;
         }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 1rem;
+
+        .sketchy-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* Quirky button */
+        .sketchy-button {
+            background-color: #ffde59; /* Bright creative yellow */
+            border: 2px solid #2c2c2c;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.2rem;
+            padding: 10px 24px;
             cursor: pointer;
-            transition: background 0.3s;
+            box-shadow: 3px 3px 0px #2c2c2c;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            margin-top: 1.5rem;
+            transition: all 0.1s ease;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .sketchy-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px #2c2c2c;
+        }
+
+        /* Doodled line separator */
+        .doodle-line {
+            width: 80%;
+            height: 4px;
+            background: #2c2c2c;
+            margin: 1rem auto;
+            border-radius: 50% / 100%;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>Welcome to My Site!</h1>
-        <p>I am learning how to code HTML and host pages on GitHub.</p>
-        <button onclick="alert('Hello from JavaScript!')">Click Me</button>
+    <div class="sketchy-card">
+        <h1>Hello, World! ✏️</h1>
+        <div class="doodle-line"></div>
+        <p>Welcome to my very first hand-crafted website. No boring corporate templates here—just raw code and quirky vibes.</p>
+        
+        <button class="sketchy-button" onclick="makeMagic()">Click for a Secret</button>
+        <p id="secret-text" style="margin-top: 1rem; font-style: italic; color: #555;"></p>
     </div>
+
+    <script>
+        function makeMagic() {
+            const secrets = [
+                "You just executed your first piece of JavaScript logic! 🎉",
+                "Behind every sketchy line is a CSS border property. ✨",
+                "Your GitHub Pages site is officially alive and evolving! 🚀",
+                "Stay curious and keep breaking things to see how they work. 💡"
+            ];
+            // Pick a random secret message
+            const randomSecret = secrets[Math.floor(Math.random() * secrets.length)];
+            document.getElementById("secret-text").innerText = randomSecret;
+        }
+    </script>
 
 </body>
 </html>
