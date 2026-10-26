@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quirky Artistic Space</title>
+    <!-- Import a hand-written font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+    
+    <style>
+        /* The organic, sketchy look */
+        body {
+            background-color: #f4c64e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 144 108'%3E%3Cg fill='none' stroke='%23d79f2b' stroke-width='2'%3E%3Cpath d='M36 0 72 18v36L36 72 0 54V18z M108 0l36 18v36l-36 18-36-18V18z M72 54l36 18v36l-36 18-36-18V72z M0-54l36 18v36L0 18-36 0v-36z M144 54l36 18v36l-36 18-36-18V72z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 144px 108px;
+            color: #2c2c2c;
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            transform: rotate(-1deg); /* Slight tilt for a human touch */
+        }
+
+
+        .nav-island {
+            background: #eab676;
+            border: 3px solid #2c2c2c;
+            box-shadow: 6px 6px 0px #2c2c2c; /* Hard offset shadow looks like comic book ink */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Organic wobbly shape */
+            max-height: 500px;
+            height: 85%;
+            padding: 2.5rem;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .bee {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 38px;
+            height: 30px;
+            overflow: visible;
+            pointer-events: all;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .bee:focus-visible {
+            outline: 2px dashed #2c2c2c;
+            outline-offset: 4px;
+        }
+
+        .pet-heart {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            color: #e84c70;
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 1;
+            pointer-events: none;
+            animation: heart-float 1.1s ease-out forwards;
+        }
+
+        @keyframes heart-float {
+            from { opacity: 0; }
+            15% { opacity: 1; }
+            to { opacity: 0; transform: translateY(-42px) scale(1.25); }
+        }
+
+        .bee-wing {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: flap 160ms ease-in-out infinite alternate;
+        }
+
+        .bee-wing--far {
+            animation-delay: 80ms;
+        }
+
+        @keyframes flap {
+            to { transform: scaleY(0.55); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bee-wing {
+                animation: none;
+            }
+        }
+
+        .nav-island ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-island a {
+            text-decoration: none; /* Removes the default blue underline */
+            color: #2c2c2c;        /* Matches your ink dark charcoal color */
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: block;        /* Makes the whole line clickable, not just the text */
+            padding: 8px 12px;
+        }
+
+        
+
+        
+    </style>
+</head>
+<body>
+
+    
+
+    <nav class="nav-island">
+    <ul>
+        <li><a href="index.html">🏠Home</a></li>
+    </ul>
+    </nav>
+
+    <template id="bee-template">
+        <svg class="bee" viewBox="0 0 48 36" aria-hidden="true">
+            <g class="bee-wing bee-wing--far" fill="#fff9e9" stroke="#2c2c2c" stroke-width="1.8">
+                <ellipse cx="20" cy="11" rx="4" ry="7" transform="rotate(-28 20 11)" />
+            </g>
+            <g class="bee-wing" fill="#fff9e9" stroke="#2c2c2c" stroke-width="1.8">
+                <ellipse cx="28" cy="10" rx="4" ry="7" transform="rotate(25 28 10)" />
+            </g>
+            <path d="M13 18 Q9 17 7 14" fill="none" stroke="#2c2c2c" stroke-width="1.8" stroke-linecap="round" />
+            <ellipse cx="24" cy="21" rx="11" ry="7.5" fill="#f4c64e" stroke="#2c2c2c" stroke-width="2" />
+            <path d="M21 14.2 Q18 20 21 27.8 M27 13.8 Q24 20 27 28.2" fill="none" stroke="#2c2c2c" stroke-width="2.5" />
+            <circle cx="36" cy="19" r="4.5" fill="#2c2c2c" />
+            <circle cx="37.5" cy="17.8" r="0.8" fill="#fff9e9" />
+            <path d="M36 14.5 Q35 11 33 10 M39 15 Q40 12 42 12" fill="none" stroke="#2c2c2c" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+    </template>
+
+    <script>
+        const beeTemplate = document.querySelector("#bee-template");
+        const bees = Array.from({ length: 6 }, () => {
+            const bee = beeTemplate.content.firstElementChild.cloneNode(true);
+            bee.setAttribute("aria-hidden", "false");
+            bee.setAttribute("role", "button");
+            bee.setAttribute("tabindex", "0");
+            bee.setAttribute("aria-label", "A little bee. Hold to pet it.");
+            document.body.appendChild(bee);
+            return bee;
+        });
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const beePositions = new WeakMap();
+        const petIntervals = new WeakMap();
+
+        function randomPoint() {
+            return {
+                x: Math.random() * Math.max(0, window.innerWidth - 38),
+                y: Math.random() * Math.max(0, window.innerHeight - 30)
+            };
+        }
+
+        function currentPosition(bee) {
+            const transform = getComputedStyle(bee).transform;
+            if (transform !== "none") {
+                const matrix = new DOMMatrixReadOnly(transform);
+                return {
+                    x: matrix.m41,
+                    y: matrix.m42,
+                    tilt: Math.atan2(matrix.b, matrix.a) * (180 / Math.PI)
+                };
+            }
+            return beePositions.get(bee) || randomPoint();
+        }
+
+        function showHeart(bee) {
+            const beeRect = bee.getBoundingClientRect();
+            const heart = document.createElement("span");
+            heart.className = "pet-heart";
+            heart.textContent = Math.random() < 0.5 ? "♥" : "♡";
+            heart.setAttribute("aria-hidden", "true");
+            heart.style.transform = `translate(${beeRect.left + 8 + Math.random() * 20}px, ${beeRect.top}px)`;
+            document.body.appendChild(heart);
+            heart.addEventListener("animationend", () => heart.remove(), { once: true });
+        }
+
+        function fly(bee) {
+            const start = beePositions.get(bee) || randomPoint();
+            const destinations = Array.from({ length: 3 }, () => {
+                const { x, y } = randomPoint();
+                return { x, y, tilt: Math.random() * 36 - 18 };
+            });
+            const keyframes = [
+                { transform: `translate(${start.x}px, ${start.y}px) rotate(${start.tilt || 0}deg)` },
+                ...destinations.map(({ x, y, tilt }) => ({
+                    transform: `translate(${x}px, ${y}px) rotate(${tilt}deg)`
+                }))
+            ];
+            const end = destinations[destinations.length - 1];
+            beePositions.set(bee, end);
+
+            bee.animate(keyframes, {
+                duration: 30000 + Math.random() * 15000,
+                easing: "ease-in-out",
+                fill: "forwards"
+            }).onfinish = () => fly(bee);
+        }
+
+        function startPetting(bee) {
+            if (petIntervals.has(bee)) return;
+            bee.getAnimations().forEach((animation) => animation.pause());
+            showHeart(bee);
+            petIntervals.set(bee, window.setInterval(() => showHeart(bee), 280));
+        }
+
+        function stopPetting(bee) {
+            const interval = petIntervals.get(bee);
+            if (interval === undefined) return;
+            window.clearInterval(interval);
+            petIntervals.delete(bee);
+            if (prefersReducedMotion.matches) return;
+            const animations = bee.getAnimations();
+            if (animations.length) {
+                animations.forEach((animation) => animation.play());
+            } else {
+                bee.style.removeProperty("transform");
+                fly(bee);
+            }
+        }
+
+        function startBeeFlights() {
+            bees.forEach((bee) => {
+                const position = currentPosition(bee);
+                bee.getAnimations().forEach((animation) => animation.cancel());
+                beePositions.set(bee, position);
+                if (prefersReducedMotion.matches || petIntervals.has(bee)) {
+                    bee.style.transform = `translate(${position.x}px, ${position.y}px) rotate(${position.tilt || 0}deg)`;
+                } else {
+                    bee.style.removeProperty("transform");
+                    fly(bee);
+                }
+            });
+        }
+
+        bees.forEach((bee) => {
+            bee.addEventListener("pointerdown", (event) => {
+                if (event.button !== 0) return;
+                event.preventDefault();
+                bee.setPointerCapture(event.pointerId);
+                startPetting(bee);
+            });
+            bee.addEventListener("pointerup", () => stopPetting(bee));
+            bee.addEventListener("pointercancel", () => stopPetting(bee));
+            bee.addEventListener("keydown", (event) => {
+                if (event.key === " " || event.key === "Enter") {
+                    event.preventDefault();
+                    startPetting(bee);
+                }
+            });
+            bee.addEventListener("keyup", (event) => {
+                if (event.key === " " || event.key === "Enter") stopPetting(bee);
+            });
+            bee.addEventListener("blur", () => stopPetting(bee));
+        });
+
+        startBeeFlights();
+        window.addEventListener("resize", startBeeFlights);
+        prefersReducedMotion.addEventListener("change", startBeeFlights);
+    </script>
+
+
+</body>
+</html>
